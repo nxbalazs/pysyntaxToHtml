@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color the code</title>
+    <style>
+    .centered {
+        text-align: center;
+    }
+    </style>
+</head>
+<body>
+    <div class="centered">
+        <h1>A simple app for django, that colotize python code and convert it to html. Try it out:</h1>
+        <br>
+        <div class="centered">
+            <form method="POST">
+                {% csrf_token %}
+                <textarea name="text" rows="10" cols="80">Write Python code between <code></code></textarea>
+                <br>
+                <button>Submit for preview</button>
+            </form>
+        </div>
+        <div style="text-align: start;">
+        {{ colored | safe }}
+        </div>
+    </div>
+    <script>
+        const textarea = document.querySelector('textarea')
+
+        textarea.addEventListener('keydown', (e) => {
+        if (e.keyCode === 9) {
+            e.preventDefault()
+
+            textarea.setRangeText(
+            '    ',
+            textarea.selectionStart,
+            textarea.selectionStart,
+            'end'
+            )
+        }
+        })
+
+    </script>
+</body>
+</html>
