@@ -28,8 +28,7 @@ def colorthecode_view(request):
     if request.method == "POST":
         text = request.POST.get('text')
         colored = pysyntax.Coloring(text).colored
-    return render(request, 'index.html', {'colored': colored})
-                </textarea>
+    return render(request, 'index.html', {'colored': colored})</textarea>
                 <br>
                 <button>Submit for preview</button>
             </form>
