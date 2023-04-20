@@ -3,7 +3,7 @@ from .pysyntax import pysyntax
 
 # Create your views here.
 def colorthecode_view(request):
-    colored = str("")
+    colored = ""
     if request.method == "POST":
         text = request.POST.get('text')
         colored = pysyntax.Coloring(text).colored

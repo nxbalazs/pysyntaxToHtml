@@ -18,7 +18,18 @@
         <div class="centered">
             <form method="POST">
                 {% csrf_token %}
-                <textarea name="text" rows="10" cols="80">Write Python code between <code></code></textarea>
+                <textarea name="text" rows="10" cols="80">
+from django.shortcuts import render
+from .pysyntax import pysyntax
+
+# Create your views here.
+def colorthecode_view(request):
+    colored = ""
+    if request.method == "POST":
+        text = request.POST.get('text')
+        colored = pysyntax.Coloring(text).colored
+    return render(request, 'index.html', {'colored': colored})
+                </textarea>
                 <br>
                 <button>Submit for preview</button>
             </form>
