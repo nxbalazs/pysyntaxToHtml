@@ -1,9 +1,9 @@
 # pysyntaxToHtml
 python syntax to html, written in django
 <br>
-from .pysyntax import pysyntax
-c = pysyntax.Coloring(text)
-c.color_bg("#ffffff")
+from .pysyntax import pysyntax<br>
+c = pysyntax.Coloring(text)<br>
+c.color_bg("#ffffff")<br>
 c.color_tc("#000000")
 
 <br>
