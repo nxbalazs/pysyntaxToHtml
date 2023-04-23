@@ -34,7 +34,13 @@ class Coloring:
         #change to blue:
         for b in self.TOBLUE:
             self.text = self.text.replace(b, "<b style=\"color: blue;\">" + b + "</b>")
-
+    
+    def color_bg(self, color):
+        self.text = "<div style=\"background-color: " + color + ";\">" + self.text + "</div>"
+    
+    def color_tc(self, color):
+        self.text = "<div style=\"color: " + color + ";\">" + self.text + "</div>"
 
     def colored(self):
         return self.text
+  
